@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 8%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 8%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 175 80% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 16% 14%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 12%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 260 60% 60%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 16% 16%;
+    --input: 220 16% 16%;
+    --ring: 175 80% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --glow-primary: 175 80% 50%;
+    --glow-accent: 260 60% 60%;
+    --surface-elevated: 220 18% 10%;
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 4%) 0%, hsl(220 24% 8%) 50%, hsl(230 20% 6%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(220 18% 10%) 0%, hsl(220 18% 6%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(175 80% 50%) 0%, hsl(200 80% 45%) 100%);
+    --shadow-glow: 0 0 40px -10px hsl(175 80% 50% / 0.3);
+    --shadow-glow-accent: 0 0 40px -10px hsl(260 60% 60% / 0.3);
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 55%));
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(175 80% 50%), hsl(260 60% 60%));
+  }
+
+  .border-glow {
+    border-color: hsl(175 80% 50% / 0.2);
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(220 16% 16% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 16% 16% / 0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .glow-dot {
+    box-shadow: 0 0 12px 2px hsl(175 80% 50% / 0.6);
+  }
+}
