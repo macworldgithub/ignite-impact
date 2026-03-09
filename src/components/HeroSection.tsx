@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden sm:-mb-24">
       {/* Grid background */}
       <div className="absolute inset-0 bg-grid opacity-40" />
-      
+
       {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/5 blur-[120px]" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-accent/5 blur-[120px]" />
-      
+
       <div className="relative z-10 container mx-auto px-6 text-center max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
         >
-          Upload. Store. Encrypt. Stream. Short-form video with native 
+          Upload. Store. Encrypt. Stream. Short-form video with native
           encryption and policy-based access control for the Web3 ecosystem.
         </motion.p>
 
@@ -53,11 +53,17 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <span className="px-3 py-1 rounded bg-secondary/60 border border-glow">≤ 5 min</span>
+          <span className="px-3 py-1 rounded bg-secondary/60 border border-glow">
+            ≤ 5 min
+          </span>
           <span className="text-primary">/</span>
-          <span className="px-3 py-1 rounded bg-secondary/60 border border-glow">≤ 8 GB</span>
+          <span className="px-3 py-1 rounded bg-secondary/60 border border-glow">
+            ≤ 8 GB
+          </span>
           <span className="text-primary">/</span>
-          <span className="px-3 py-1 rounded bg-secondary/60 border border-glow">4K Ready</span>
+          <span className="px-3 py-1 rounded bg-secondary/60 border border-glow">
+            4K Ready
+          </span>
         </motion.div>
 
         <motion.div
@@ -66,13 +72,22 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
         >
-          <Button size="lg" className="px-8 py-6 text-base font-semibold rounded-xl shadow-[var(--shadow-glow)]">
+          <Button
+            size="lg"
+            className="px-8 py-6 text-base font-semibold rounded-xl shadow-[var(--shadow-glow)]"
+          >
             Read the Proposal
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
-          <Button variant="outline" size="lg" className="px-8 py-6 text-base font-semibold rounded-xl border-glow text-foreground hover:bg-secondary">
-            View Architecture
-          </Button>
+          <a href="#architecture">
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 py-6 text-base font-semibold rounded-xl border-glow text-foreground hover:bg-secondary"
+            >
+              View Architecture
+            </Button>
+          </a>
         </motion.div>
       </div>
 
